@@ -100,6 +100,7 @@
     INSERT INTO notlar VALUES ('125', 'tarih',90);
 	INSERT INTO notlar VALUES ('126', 'Matematik',90);   
       
-      drop table talebeler;
+      DELETE FROM talebeler
+    WHERE id = 124;
       
       
