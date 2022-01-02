@@ -338,7 +338,7 @@ select * from kelimeler
   ORNEK29: a veya s ile başlayan kelimelerin tüm bilgilerini listeleyiniz.
 -----------------------------------------------------------------------------*/ 
  select * from kelimeler   
-    where REGEXP_LIKE(kelime,'[as]');
+    where REGEXP_LIKE(kelime,'^[as]');
 
 /* -----------------------------------------------------------------------------
   ORNEK30: içerisinde en az 2 adet oo barıdıran kelimelerin tüm bilgilerini 
