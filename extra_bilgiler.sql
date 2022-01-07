@@ -37,5 +37,53 @@ select ad, concat(left(ad,1),right (left(ad,3),1), right(left(ad,5),1))
 from customer
 where length(ad)>5;
 
+-- **** substring
+select ad, 
+ substr(ad,3),  -- ad in verilen index ten( 1  den başlar...) sonrakini verir
+ substr(ad,3,2)  -- ad in verilen index ten( 1  den başlar...) sonraki 2 harfi verir. 3 dahil. 3 ve 4 u alır.
+ from customer;
+ 
+
+ 
+
+-- ****************************************** replace (String functions) ******************************************************
+
+select ad,
+replace (ad,'e','*')
+from customer;
+
+select ad,
+replace (ad,substr(ad,-3),'***')  -- sondan 3 harfi *** ile değiştirin
+from customer;
+
+
+
+
+-- ******************************************  repeat  *************************************************************************
+
+
+ -- repeat :: repeat('ne yazacaksan',int sayı)
+ 
+ select ad, repeat('*',5) from customer;             -- w3school den bakılarak
+ 
+ select ad,length(ad),
+ concat (left(ad,1),repeat('*',length(ad)-1))
+ soyad,length(soyad),
+ concat(left(soyad,1),repeat('*',length(soyad)-1))
+ from customer;
+ 
+ 
+ select ad,
+ concat (left(ad,1),repeat('*',length(ad)-2),right(ad,1))
+  soyad,
+  concat (left(ad,1),repeat('*',length(soyad)-2),right(soyad,1))
+ from customer;
+ 
+ -- lower upper     satırı kucultur yada buyutur...
+ 
+ select ad,lower(ad) from customer;
+ select ad,upper(ad) from customer;
+
+
 
 
